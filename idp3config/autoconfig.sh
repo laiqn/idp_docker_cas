@@ -22,14 +22,12 @@ echo "0 */1 * * * sh /var/www/html/auditlog/auditlog.sh >/dev/null 2>&1" >> /var
 
 \cp -f /opt/inst/idp3config/ssl.conf /etc/httpd/conf.d/ssl.conf
 \cp -f /opt/inst/idp3config/idp.conf /etc/httpd/conf.d/idp.conf
-sed -i "s/MY_IDP_HOSTNAME/$hostname/g" /etc/httpd/conf.d/idp.conf
 
 
 # replace secret for apache and tomcat
-secret=`openssl rand 32 -base64`
-sed -i "s/replaceyoursecret/$secret/g" /etc/tomcat/server.xml
-sed -i "s/replaceyoursecret/$secret/g" /etc/httpd/conf.d/idp.conf
-
+passwd=`openssl rand 32 -base64`
+sed -i "s/replaceyoursecret/$passwd/g" /etc/tomcat/server.xml
+sed -i "s/replaceyoursecret/$passwd/g" /etc/httpd/conf.d/idp.conf
 
 #copy temporary credentials
 mkdir /opt/credentials
