@@ -1,0 +1,2 @@
+rm -rf /var/www/html/auditlog/auditlog-`date -d -24hours +%Y-%m-%d-%H`.log
+grep `date -d -1hours +%Y-%m-%dT%H` /opt/shibboleth-idp/logs/idp-audit.log > /var/www/html/auditlog/auditlog-`date -d -1hours +%Y-%m-%d-%H`.log
