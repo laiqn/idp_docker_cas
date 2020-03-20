@@ -15,7 +15,7 @@
         var localpart = "";
         if(usertype.getValues().get(0)=="staf") localpart = "staff";
         else if(usertype.getValues().get(0)=="std") localpart = "student";
-        else localpart = "other";
+        else localpart = "member";
         eduPersonScopedAffiliation.addValue(localpart + "@%{idp.scope}");
             ]]></Script>
         <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:eduPersonScopedAffiliation" encodeType="false" />
