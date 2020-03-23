@@ -26,8 +26,8 @@ echo "0 */1 * * * sh /var/www/html/auditlog/auditlog.sh >/dev/null 2>&1" >> /var
 
 # replace secret for apache and tomcat
 passwd=`openssl rand 32 -base64`
-sed -i "s/replaceyoursecret/$passwd/g" /etc/tomcat/server.xml
-sed -i "s/replaceyoursecret/$passwd/g" /etc/httpd/conf.d/idp.conf
+sed -i "s/xxxxxxxxxxxx/$passwd/g" /etc/tomcat/server.xml
+sed -i "s/xxxxxxxxxxxx/$passwd/g" /etc/httpd/conf.d/idp.conf
 
 #copy temporary credentials
 mkdir /opt/credentials
